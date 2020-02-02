@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Open;
+import net.serenitybdd.screenplay.questions.page.PageTitleQuestion;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Managed;
 import org.junit.Before;
@@ -24,7 +25,7 @@ import static user_interface.GoogleHomePage.*;
 public class GoogleSearchResults {
     private Actor user = new Actor("Current user");
     private final String GOOGLE_URL = "http://www.google.com";
-    private final String GOOGLE_PLAY_STORE_LINK = "https://play.google.com/store/apps/details?id=com.usemenu.MenuAndroidApplication&hl=en";
+    private final String GOOGLE_PLAY_STORE_LINK = "https://menu.app/de/";
 
     @Managed(driver = "chrome", uniqueSession = true)
     private WebDriver hisBrowser;
@@ -45,6 +46,7 @@ public class GoogleSearchResults {
                         Click.on(GOOGLE_SEARCH_BUTTON));
         then(user)
                 .should(
+                        seeThat(new PageTitleQuestion(),is("MENU APP - Google претрага")),
                         seeThat(hyperlinkOfTheElement(FIRST_RESULT_LINK), is(GOOGLE_PLAY_STORE_LINK)));
     }
 }

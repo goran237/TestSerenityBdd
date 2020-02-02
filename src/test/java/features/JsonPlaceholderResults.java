@@ -38,7 +38,7 @@ public class JsonPlaceholderResults {
                                         .withName("John")
                                         .withAge(30)
                                         .withSkills("c++", "python", "java")
-                                        .withSalary(1000).build()))
+                                        .withSalary(50).build()))
                                 .log()
                                 .all()));
         then(user)
@@ -50,7 +50,7 @@ public class JsonPlaceholderResults {
                                 .body("id", is(101))
                                 .body("name", is("John"))
                                 .body("age", is(30))
-                                .body("salary", is(1000))
+                                .body("salary", is(50))
                                 .body("skills", hasSize(3))));
     }
 }
