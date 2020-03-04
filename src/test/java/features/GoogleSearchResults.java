@@ -25,7 +25,7 @@ import static user_interface.GoogleHomePage.*;
 public class GoogleSearchResults {
     private Actor user = new Actor("Current user");
     private final String GOOGLE_URL = "http://www.google.com";
-    private final String GOOGLE_PLAY_STORE_LINK = "https://menu.app/de/";
+    private final String GOOGLE_PLAY_STORE_LINK = "https://play.google.com/store/apps/details?id=com.usemenu.MenuAndroidApplication&hl=en";
 
     @Managed(driver = "chrome", uniqueSession = true)
     private WebDriver hisBrowser;
